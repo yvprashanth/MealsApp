@@ -53,8 +53,16 @@ const initialCalendarState = {
                 }
             }
           case REMOVE_FROM_CALENDAR:
-            return {}
+            return {
+                ...state, 
+                [day]: {
+                    ...state[day],
+                    [meal]: null,
+                }
+            }
           default : 
             return state
       }
   }
+
+  export default calendar
